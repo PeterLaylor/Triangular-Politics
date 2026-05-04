@@ -43,22 +43,22 @@ type CategorySignal = {
 };
 
 const SCALE = [
-  { label: "Strongly disagree", short: "SD", value: -2 },
-  { label: "Disagree", short: "D", value: -1 },
-  { label: "Neutral", short: "N", value: 0 },
-  { label: "Agree", short: "A", value: 1 },
-  { label: "Strongly agree", short: "SA", value: 2 },
+  { label: "Strongly disagree", short: "Strongly disagree", value: -2 },
+  { label: "Disagree", short: "Disagree", value: -1 },
+  { label: "Neutral", short: "Neutral", value: 0 },
+  { label: "Agree", short: "Agree", value: 1 },
+  { label: "Strongly agree", short: "Strongly", value: 2 },
 ] as const;
 
-// All questions in one place - just edit/add/remove here
 // IDs are auto-generated based on array position (starting at 1)
+
 const QUESTIONS: Question[] = [
  //Bio-pyschological level
   //Conscientiousness spectrum
  {
     category: "Bio-pyschological",
     prompt:
-      "I find deep personal satisfaction in fulfilling non-mandatory, inhertied duties and obligations",
+      "I find deep personal satisfaction in fulfilling inhertied duties and obligations, solely because they are inherited.",
     weights: { s: -2, l: 0, m: 0 },
   },
    {
@@ -73,12 +73,7 @@ const QUESTIONS: Question[] = [
       "I dislike non-mandatory hardwork and prefer to pass responsibility onto someone else for the sake of avoiding difficult tasks.",
     weights: { s: 2, l: 0, m: 0 },
   },
-     {
-    category: "Bio-pyschological",
-    prompt:
-      "I make no attempt to organise myself beyond the bare minimum because I see no point in doing so.",
-    weights: { s: 2, l: 0, m: 0 },
-  },
+
   //Novelty seeking <-> Routine spectrum
      {
     category: "Bio-pyschological",
@@ -139,7 +134,7 @@ const QUESTIONS: Question[] = [
     {
     category: "Bio-pyschological",
     prompt:
-      "At work, I'd rather do things my way than listen to others speculate on how we could do it better.",
+      "At work, I'd rather do things the tried and true way rather than innovating a new solution.",
     weights: { s: -2, l: 0, m: 0 },
   },
     {
@@ -182,7 +177,7 @@ const QUESTIONS: Question[] = [
 {
     category: "Moral-Ideological",
     prompt:
-      "A wise reformer can redesign a society more aptly than a traditionalist ever could.",
+      "A wise reformer can redesign society more aptly than a traditionalist ever could.",
     weights: { s: 0, l: 2, m: 0 },
   },
 {
@@ -194,20 +189,8 @@ const QUESTIONS: Question[] = [
   {
     category: "Moral-Ideological",
     prompt:
-      "Something's age more accurately predicts it's lifespan than other metrics.",
-    weights: { s: 0, l: -2, m: 0 },
-  },
-  {
-    category: "Moral-Ideological",
-    prompt:
-      "The future has to become more progressive and equitable for it to be a good future.",
+      "Younger generations have an obligation to make each newer generation more equitable and progressive than the last.",
     weights: { s: 0, l: 2, m: 0 },
-  },
-  {
-    category: "Moral-Ideological",
-    prompt:
-      "Civil law must align with natural law.",
-    weights: { s: 0, l: -2, m: 0 },
   },
   {
     category: "Moral-Ideological",
@@ -215,11 +198,13 @@ const QUESTIONS: Question[] = [
       "There are real biological differences between gender and race that no policy can remove.",
     weights: { s: 0, l: -2, m: 0 },
   },
+
 //Monism vs GES
+
 {
     category: "Politco-Structural",
     prompt:
-      "Having an administrative entity is a general positive at a civilisational level, even if it costs the local culture.",
+      "Having an administrative entity is a general positive at a civilisational level, even if the cost is local cultures.",
     weights: { s: 0, l: 0, m: 2 },
   },
   {
@@ -246,13 +231,9 @@ const QUESTIONS: Question[] = [
       "I would rather live under a single authority than a collection of equally responsible authorities.",
     weights: { s: 0, l: 0, m: 2 },
   },
-    {
-    category: "Politco-Structural",
-    prompt:
-      "I don't believe any form of governance.",
-    weights: { s: 0, l: 0, m: 2 },
-  },
+
     ///Real world policy
+
 {
     category: "Policy",
     prompt:
@@ -407,8 +388,8 @@ export default function App() {
               Sixty-five statements across temperament, doctrine, institutions, law, markets, and scale.
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-[#aaa69c]">
-              Answer every item. The scoring still maps to the three original axes: temporal to spatial,
-              illiberal to liberal, and pluralist to monist.
+              Answer every item. The scoring still maps to the axes: Temporal to Spatial,
+              Illiberal to Liberal, and Pluralist to Monist.
             </p>
           </div>
 
@@ -438,10 +419,10 @@ export default function App() {
                           : "border-white/10 hover:border-white/20"
                       }`}
                     >
-                      <legend className="mb-4 block w-full text-base leading-7 text-[#f2efe6]">
+                      <div className="mb-6 text-base leading-7 text-[#f2efe6]">
                         <span className="mr-2 font-semibold text-[#c9a96b]">{question.id}.</span>
                         {question.prompt}
-                      </legend>
+                      </div>
                       <div className="grid gap-2 sm:grid-cols-5">
                         {SCALE.map((option) => {
                           const inputId = `q${question.id}-${option.value}`;
