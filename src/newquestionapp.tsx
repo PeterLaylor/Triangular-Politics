@@ -271,13 +271,7 @@ const QUESTIONS: Question[] = [
       "I think multiculturalism is good.",
     weights: { s: 0, l: 2, m: 0 },
   },
-  {
-    category: "Policy",
-    prompt:
-      "I do not think there should be any government because having positions of power is inherently unequal, and therefore wrong.",
-    weights: { s: 0, l: 2, m: 2 },
-  },
-    {
+   {
     category: "Policy",
     prompt:
       "If a free-market was to exist, it should exist for the purpose of advancing humanity rather than share-holders.",
