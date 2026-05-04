@@ -47,7 +47,7 @@ const SCALE = [
   { label: "Disagree", short: "Disagree", value: -1 },
   { label: "Neutral", short: "Neutral", value: 0 },
   { label: "Agree", short: "Agree", value: 1 },
-  { label: "Strongly agree", short: "Strongly", value: 2 },
+  { label: "Strongly agree", short: "Strongly agree", value: 2 },
 ] as const;
 
 // IDs are auto-generated based on array position (starting at 1)
