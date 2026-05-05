@@ -258,6 +258,7 @@ const QUESTIONS: Question[] = [
       "If a free-market was to exist, it should exist for the purpose of advancing humanity rather than share-holders.",
     weights: { s: 0, l: -2, m: 0 },
   },
+
 ];
 
 const PROTOTYPES = {
@@ -266,14 +267,14 @@ const PROTOTYPES = {
     shortLabel: "Redistributive monist",
     color: "#b84a6a",
     description:
-      "Spatial, liberal, and monist. This corner emphasizes universal equality, centralized redistribution, and the use of moral pressure or state capacity to dissolve inherited distinctions.",
+      "Spatial, liberal, and monist. This corner emphasizes universal equality, centralized redistribution, and the use of moral or state pressure to dissolve inherited distinctions.",
   },
   indiv: {
     label: "Individualist",
     shortLabel: "Autonomy and market",
     color: "#d8b34a",
     description:
-      "Spatial and liberal with an anti-corporate or anti-state reflex. This corner prioritizes exit, contract, price signals, and personal autonomy over inherited duties or thick intermediary bodies.",
+      "Spatial, liberal, and monist, with an anti-inefficiency and pro-market nature. This corner prioritizes exit, contractual obligations, price signals, and personal autonomy over inherited duties or thick intermediary bodies.",
   },
   abs: {
     label: "Absolutist Right",
@@ -287,7 +288,7 @@ const PROTOTYPES = {
     shortLabel: "The deep center",
     color: "#6fbf73",
     description:
-      "Temporal, illiberal, and pluralist. This corner favors layered sovereignty, corporate bodies, local law, rooted authority, and multiple centers of power able to check each other.",
+      "Temporal, illiberal, and pluralist. This corner favors heterarchy, corporatist bodies, local law, rooted authority, and multiple centers of power able to check and balance each other.",
   },
 
 } as const;
@@ -385,10 +386,10 @@ export default function App() {
           <div className="py-10">
             <p className="mb-3 text-sm uppercase tracking-[0.28em] text-[#c9a96b]">Expanded diagnostic</p>
             <h2 className="max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Sixty-five statements across temperament, doctrine, institutions, law, markets, and scale.
+              Statements across temperament, doctrine, institutions, law, markets, and scale.
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-[#aaa69c]">
-              Answer every item. The scoring still maps to the axes: Temporal to Spatial,
+              Answer every item. The scorin maps to the three axes: Temporal to Spatial,
               Illiberal to Liberal, and Pluralist to Monist.
             </p>
           </div>
@@ -497,8 +498,8 @@ function Hero({ progress }: { progress: number }) {
             The Political Triangle Test
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-[#bdb8ad]">
-            A wider diagnostic across three axes: bio-psychological temperament, moral doctrine, and the
-            structure of political power.
+            A diagnostic across three axes: the bio-pyschological, the expression of the bio-pyschological in the moral-ideological, and the politico-structural from the moral-ideological. <br></br>
+            Based on <a href="https://www.youtube.com/watch?v=COfGrpZrP-g" target="_blank"><u>this video by Exquofonte.</u></a>
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
